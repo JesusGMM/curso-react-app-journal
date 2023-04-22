@@ -1,9 +1,8 @@
 import { useDispatch } from 'react-redux';
-
 import { AppBar, Grid, IconButton, Toolbar, Typography } from '@mui/material';
 import { LogoutOutlined, MenuOutlined } from '@mui/icons-material';
-
 import { startLogout } from '../../store/auth';
+
 
 export const NavBar = ({ drawerWidth = 240 }) => {
 
@@ -12,6 +11,7 @@ export const NavBar = ({ drawerWidth = 240 }) => {
     const onLogout = () => {
         dispatch(startLogout());
     }
+
 
     return (
         <AppBar
@@ -31,9 +31,12 @@ export const NavBar = ({ drawerWidth = 240 }) => {
                 </IconButton>
 
                 <Grid container direction='row' justifyContent='space-between' alignItems='center'>
-                    <Typography variant='h6' noWrap component='div'> Mi app de tareas </Typography>
+                    <Typography variant='h6' noWrap component='div'> JournalApp </Typography>
 
-                    <IconButton color='error' onClick={onLogout}>
+                    <IconButton
+                        color='error'
+                        onClick={onLogout}
+                    >
                         <LogoutOutlined />
                     </IconButton>
                 </Grid>
